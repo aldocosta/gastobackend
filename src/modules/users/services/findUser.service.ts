@@ -1,9 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
+import { User, UserDocument } from 'modules/infra/mongoose/schemas/bussiness.schemas/user/user.schema';
 import { EncryptService } from 'modules/shared/services/encrypt.service';
 import { Model } from 'mongoose';
-import { UserDto } from '../dto/user.dto';
-import { User, UserDocument } from '../models/user.schema';
 
 @Injectable()
 export class FindUserService {

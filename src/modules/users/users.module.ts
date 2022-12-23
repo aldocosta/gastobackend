@@ -3,8 +3,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { SharedModule } from 'modules/shared/shared.module';
 import { UsersController } from './controllers/user.controller';
-import { UserDefinition } from './models/user.definition';
-import { User } from './models/user.schema';
+import { UserDefinition } from '../infra/mongoose/schemas/bussiness.schemas/user/user.definition';
 import { FindUserService } from './services/findUser.service';
 
 @Module({

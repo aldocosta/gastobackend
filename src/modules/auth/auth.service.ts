@@ -1,12 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { InjectModel } from '@nestjs/mongoose';
 import { DecryptCompareService } from 'modules/shared/services/decrypt.service';
-import { EncryptService } from 'modules/shared/services/encrypt.service';
-import { User, UserDocument } from 'modules/users/models/user.schema';
 import { FindUserService } from 'modules/users/services/findUser.service';
-import { Model } from 'mongoose';
-import { UserDto } from '../users/dto/user.dto';
 
 @Injectable()
 export class AuthService {
@@ -40,7 +35,4 @@ export class AuthService {
     };
   }
 
-
 }
-
-
