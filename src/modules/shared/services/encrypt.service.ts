@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { bcrypt } from 'bcrypt'
+import { hash } from 'bcrypt';
 
 @Injectable()
 export class EncryptService {
@@ -7,13 +7,7 @@ export class EncryptService {
     saltRounds = 10;
 
     async run(text: string): Promise<string> {
-        const ret = await bcrypt.hash(text, this.saltRounds)
-        return ret;
-        // return new Promise((f, r) => {
-        //     bcrypt.hash(text, this.saltRounds, function (err, hash) {
-        //         if (err) return r(err);
-        //         return f(hash)
-        //     })
-        // })
+        const ret = await hash(text, this.saltRounds)
+        return ret;  
     }
 }

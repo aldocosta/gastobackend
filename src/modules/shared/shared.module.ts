@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { DecryptService } from './services/decrypt.service';
+import { DecryptCompareService } from './services/decrypt.service';
 import { EncryptService } from './services/encrypt.service';
 
 @Module({
-    providers: [EncryptService, DecryptService],
-    exports: [EncryptService, DecryptService]
+    providers: [EncryptService, DecryptCompareService],
+    exports: [EncryptService, DecryptCompareService]
 })
 export class SharedModule {
 
