@@ -1,6 +1,7 @@
-import { Controller, Get, Post, UseGuards, Request, Inject, Body } from '@nestjs/common';
+import { Controller, Get, Post, UseGuards, Request, Inject, Body, Delete } from '@nestjs/common';
 import { UserDto } from '../dto/user.dto';
 import { AddUserService } from '../services/addUser.service';
+import { DeleteArrayUsersService } from '../services/deleteArrayUsers.service';
 import { FindAllUserService } from '../services/findAllUser.service';
 
 
@@ -8,7 +9,8 @@ import { FindAllUserService } from '../services/findAllUser.service';
 export class UsersController {
   constructor(
     private readonly addUserService: AddUserService,
-    private readonly findAllUserService: FindAllUserService) { }
+    private readonly findAllUserService: FindAllUserService,
+    private readonly deleteArrayUsersService: DeleteArrayUsersService) { }
 
   // @Post('auth/logins')
   // async login(@Request() req) {
@@ -24,6 +26,11 @@ export class UsersController {
   @Get('/all')
   async all() {
     return this.findAllUserService.run()
+  }
+
+  @Delete('/byids')
+  async byIds(@Body() ids) {
+    return await this.deleteArrayUsersService.run(ids)
   }
 
 

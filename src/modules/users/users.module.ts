@@ -7,6 +7,7 @@ import { UserDefinition } from '../infra/mongoose/schemas/bussiness.schemas/user
 import { FindUserService } from './services/findUser.service';
 import { AddUserService } from './services/addUser.service';
 import { FindAllUserService } from './services/findAllUser.service';
+import { DeleteArrayUsersService } from './services/deleteArrayUsers.service';
 
 @Module({
   imports: [  
@@ -19,6 +20,7 @@ import { FindAllUserService } from './services/findAllUser.service';
   providers: [
     FindUserService,
     FindAllUserService,
+    DeleteArrayUsersService,
     AddUserService],
   exports:[FindUserService]
 })
