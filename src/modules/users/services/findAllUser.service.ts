@@ -5,15 +5,15 @@ import { EncryptService } from 'modules/shared/services/encrypt.service';
 import { Model } from 'mongoose';
 
 @Injectable()
-export class FindUserService {
+export class FindAllUserService {
 
   constructor( 
     @InjectModel(User.name) private readonly userModel: Model<UserDocument>,    
     private readonly encryptService: EncryptService
   ) { }
 
-  async run(user: IUser): Promise<IUser | undefined> {
-        return this.userModel.findOne({ email: user.email })
+  async run(): Promise<IUser[] | undefined> {
+        return this.userModel.find<IUser>()
   }
 
 }

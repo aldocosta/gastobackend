@@ -6,4 +6,7 @@ export class UserDto {
 
     @IsNotEmpty({message:'Campo password Obrigatório'})
     password: string;
+
+    @IsNotEmpty({message:'Campo password Obrigatório'})
+    name: string;
 }

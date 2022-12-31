@@ -5,6 +5,8 @@ import { SharedModule } from 'modules/shared/shared.module';
 import { UsersController } from './controllers/user.controller';
 import { UserDefinition } from '../infra/mongoose/schemas/bussiness.schemas/user/user.definition';
 import { FindUserService } from './services/findUser.service';
+import { AddUserService } from './services/addUser.service';
+import { FindAllUserService } from './services/findAllUser.service';
 
 @Module({
   imports: [  
@@ -14,7 +16,10 @@ import { FindUserService } from './services/findUser.service';
     ),
   ],
   controllers: [UsersController],
-  providers: [FindUserService],
+  providers: [
+    FindUserService,
+    FindAllUserService,
+    AddUserService],
   exports:[FindUserService]
 })
 export class UsersModule { }
