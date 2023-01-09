@@ -8,6 +8,7 @@ import { FindUserService } from './services/findUser.service';
 import { AddUserService } from './services/addUser.service';
 import { FindAllUserService } from './services/findAllUser.service';
 import { DeleteArrayUsersService } from './services/deleteArrayUsers.service';
+import { FindUserByMongoIDService } from './services/findUserByMongoID.service';
 
 @Module({
   imports: [  
@@ -21,7 +22,8 @@ import { DeleteArrayUsersService } from './services/deleteArrayUsers.service';
     FindUserService,
     FindAllUserService,
     DeleteArrayUsersService,
-    AddUserService],
+    AddUserService,
+    FindUserByMongoIDService],
   exports:[FindUserService]
 })
 export class UsersModule { }
